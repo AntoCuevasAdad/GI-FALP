@@ -11,10 +11,15 @@ Description: "Perfil de Paciente"
 * name 1..1
 * birthDate 1..1
 * identifier 1..* 
-* extension contains Geolocation named Geolocalizacion 1..1 
-* extension contains Comunas named Comuna 1..1 
-* extension contains Provincia named Provincia 1..1 
-* extension contains Region named Region 1..1 
+* address
+* address only cl-address
+  * extension[Geolocalizacion] 0..1
+  * city 1..1
+  * district 1..1
+  * state 1..1 
+//* extension contains Comunas named Comuna 1..1 
+//* extension contains Provincia named Provincia 1..1 
+//* extension contains Region named Region 1..1 
 * contact
 * contact.extension[IdContacto] 1..* 
 * contact.name.family 1..1
@@ -24,10 +29,8 @@ Description: "Perfil de Paciente"
 * contact.telecom.value ^short = "Detalles de Contacto"
 * contact.telecom.value ^definition = "Detalles del Contacto, comunmente el o los mas usados (Ej: Teléfono fijo, móvil, email, etc.)"
 * contact.telecom.value[MyTelecomExtension].valueString 
-* contact.extension contains Geolocalizacion named Geolocalizacion 0..1 
-* contact.extension contains Provincia named Provincia 1..1 
-* contact.extension contains Comunas named Comuna 1..1 
-* contact.extension contains Region named Región 1..1
+* contact.address only cl-address
+* contact.address
 
 
 

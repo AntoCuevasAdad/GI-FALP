@@ -28,40 +28,6 @@ Context: Patient
 * valueCodeableConcept from https://hl7chile.cl/fhir/ig/clcore/ValueSet/CodPais
   * ^binding.description = "Tabla de Nacionalidad"
 
-Extension: Geolocalizacion
-Id: Geolocalizacion
-Title: "Geolocalizacion"
-Description: "Dirección del paciente"
-* value[x] only string 
-
-Extension: Comunas
-Id: Comunas 
-Title: "Set de códigos de Comuna"
-Description: "Comuna de recidencia"
-* value[x] only CodeableConcept
-  * ^short = "Comuna de residencia"
-* valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSComunas 
-  * ^binding.description = "Tabla de Comunas"
-
-Extension: Provincia
-Id: Provincia 
-Title: "Set de códigos de Provincia"
-Description: "Provincia de residencia" 
-* value[x] only CodeableConcept
-  * ^short = "Provincia de residencia"
-* valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSProvincia 
-  * ^binding.description = "Tabla de Provincia"
-
-Extension: Region
-Id: Region
-Title: "Set de códigos de Región"
-Description: "Comuna de residencia"
-Context: Patient 
-* value[x] only CodeableConcept
-  * ^short = "Región de residencia"
-* valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSRegion
-  * ^binding.description = "Tabla de Regiones"
-
 Extension: IdContacto
 Id: IdContacto
 Title: "Identificador de Contacto"
@@ -112,24 +78,37 @@ Context: Coverage
 * value[x] only string 
 * valueString 1..1
 
-//PROCEDURE//
+//SOLICITUD DEL PROCEDIMIENTO// 
+Extension: FechaSolicitud
+Id: Fecha-Solicitud
+Title: "Fecha de Solicitud"
+Description: "Fecha en que se realizó la solicitud del procedimiento."
+Context: Condition
+* value[x] only dateTime 
+* DateTime
+
+//REPORTE DE PROCEDIMIENTO//
 
 Extension: TipoProcedimiento
 Id:  TipoProcedimiento
 Title: "Set de códigos de tipos de procedimientos"
 Description: "Set de códigos de tipos de procedimientos"
 Context: Procedure
-* value[x] only CodeableConcept
-  * ^short = "Tipos de procedimiento "
+* value[x] only string 
+* valueString
+/** value[x] only CodeableConcept
+  * ^short = "Tipos de procedimientos"
 * valueCodeableConcept from http://hl7.org/fhir/ValueSet/procedure-code
   * ^binding.description = "Tipos de procedimientos"
+*/
 
-Extension: FechaSolicitud
-Id: Fecha-Solicitud
-Title: "Fecha de Solicitud"
-Description: "Fecha en que se realizó la solicitud del procedimiento."
+Extension: FechaProcedimiento
+Id: Fecha-Procedimiento
+Title: "Fecha de Procedimiento"
+Description: "Fecha en que se realizó el procedimiento."
 Context: Procedure 
-* valueDateTime 1..1
+* value[x] only dateTime 
+* DateTime
 
 Extension: UrgenciaProcedimiento
 Id: UrgenciaProcedimiento

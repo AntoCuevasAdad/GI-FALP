@@ -12,5 +12,5 @@ Description: "Historia clinica respecto a diagnóstico previos si posee el Pacie
 * extension contains SeveridadDiagnostico named SeveridadDiagnostico 0..1   
 * extension contains ObservacionD named Observacion 0..1
 
-* extension contains Referencia named Refencia 1..1 
+* extension contains Referencia named Referencia 1..1 
 

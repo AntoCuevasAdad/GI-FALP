@@ -10,8 +10,9 @@ Description: "Perfil del Prestador Individual"
   * ^definition = "Fecha de nacimiento del prestador" 
 * extension contains https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises named Nacionalidad  0..* 
 * identifier  1..* 
-* extension contains Region named Región 1..1
-* qualification[Cert] 1..*
+* address only cl-address
+* address
+* qualification[Cert] 0..*
 * extension contains Mension named Mensión 0..1 
-* qualification[Esp] 1..*
+* qualification[Esp] 0..*
 * qualification[SubEsp] 0..1 
