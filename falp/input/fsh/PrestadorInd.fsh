@@ -12,6 +12,7 @@ Description: "Perfil del Prestador Individual"
 * identifier  1..* 
 * address only cl-address
 * address
+  * state 1..1 
 * qualification[Cert] 0..*
 * extension contains Mension named Mensión 0..1 
 * qualification[Esp] 0..*

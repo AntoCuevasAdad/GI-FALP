@@ -124,7 +124,7 @@ Extension: Observacion
 Id: Observacion 
 Title: "Observación"
 Description: "Alguna observación para el procedimiento"
-Context: Procedure
+// Context: Procedure
 * value[x] only string 
 * valueString
 
@@ -156,13 +156,14 @@ Context: CoreDiagnosticoCl
 * valueCodeableConcept from VSseveridadDiagnostica
   * ^binding.description = "Valoración subjetiva de la gravedad de la enfermedad evaluada por el clínico"
 
-Extension: ObservacionD
+/*Extension: ObservacionD
 Id: ObservacionD
 Title: "Observación"
 Description: "Alguna observación que se tenga del diagnóstico"
 Context: CoreDiagnosticoCl
 * value[x] only string 
 * valueString
+*/ 
 
 //PRESTADOR INDIVIDUAL///
 

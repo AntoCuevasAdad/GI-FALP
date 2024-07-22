@@ -17,9 +17,6 @@ Description: "Perfil de Paciente"
   * city 1..1
   * district 1..1
   * state 1..1 
-//* extension contains Comunas named Comuna 1..1 
-//* extension contains Provincia named Provincia 1..1 
-//* extension contains Region named Region 1..1 
 * contact
 * contact.extension[IdContacto] 1..* 
 * contact.name.family 1..1
@@ -31,6 +28,6 @@ Description: "Perfil de Paciente"
 * contact.telecom.value[MyTelecomExtension].valueString 
 * contact.address only cl-address
 * contact.address
-
+  * state 1..1  
 
 
