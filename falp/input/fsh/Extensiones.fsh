@@ -93,7 +93,7 @@ Extension: TipoProcedimiento
 Id:  TipoProcedimiento
 Title: "Set de códigos de tipos de procedimientos"
 Description: "Set de códigos de tipos de procedimientos"
-Context: Procedure
+//Context: Procedure/Condition
 * value[x] only string 
 * valueString
 /** value[x] only CodeableConcept

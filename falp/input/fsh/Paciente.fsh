@@ -8,7 +8,7 @@ Title: "Paciente"
 Description: "Perfil de Paciente"
 * extension contains SexoBiologico named Sexobiologico 1..1 
 * extension contains Nacionalidad named Nacionalidad 1..*
-* name 1..1
+* name 1..1 
 * birthDate 1..1
 * identifier 1..* 
 * address

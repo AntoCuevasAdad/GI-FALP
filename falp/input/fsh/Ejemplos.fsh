@@ -6,14 +6,14 @@ Description: "An example Patient instance."
 
 * id = "example-paciente"
 * extension[Sexobiologico].valueCodeableConcept = #male
-* extension[Nacionalidad].valueCodeableConcept.coding.system = "urn:iso:std:iso:3166"
+//* extension[Nacionalidad].valueCodeableConcept.coding.system = "urn:iso:std:iso:3166"
 * extension[Nacionalidad].valueCodeableConcept.coding.code = #CL
 * extension[Nacionalidad].valueCodeableConcept.coding.display = "Chile"
 * name.family = "Perez"
 * name.given = "Juan"
 * birthDate = "1980-01-01"
 * identifier.use = #official
-* identifier.system = #152 "CHILE"
+//* identifier.system = #152 //"CHILE"
 * identifier.type = #PPN "Passport Number"
 * identifier.value = "P102145874"
 * active = true
@@ -51,15 +51,15 @@ Usage: #Example
 Title: "Example Presentación de Salud"
 Description: "An example Prestación de Salud instance." 
 
-* id = "example-coverage"
+* id = "example-PrestacionSalud"
 * status = #active
 * beneficiary = Reference(ExamplePaciente)
 * payor[0] = Reference(ExamplePayor)
-* extension[PrevisionSalud].valueCodeableConcept = #1
-* extension[TramosFonasa].valueCodeableConcept = #C
+* extension[PrevisionSalud].valueCodeableConcept = #1 "FONASA"
+* extension[TramosFonasa].valueCodeableConcept = #C "TRAMO C"
 * extension[SegCapa].valueBoolean = true
 * extension[NombreSeguro].valueString = "MEGA TRONIX 1000"
-* extension[Referencia].valueReference = Reference(Paciente/example)
+* extension[Referencia].valueReference = Reference(Paciente/Example)
 
 //SOLICITUD DEL PROCEDIMIENTO //
 Instance: SolicitudProcedimiento
@@ -67,13 +67,13 @@ InstanceOf: Condition
 Usage: #Example 
 Title: "Solicitud del Procedimiento"
 Description: "An example Solicitud del Procedimiento instance." 
- 
-* id = "example-condition"
+
+* id = "example-SolicitudProcedimiento"
 * subject = Reference(ExamplePaciente) 
 * extension[FechaSolicitud].valueDateTime = "2024-07-17"
 * extension[TipoProcedimiento].valueString = "BIOPSIA"
-* extension[UrgenciaProcedimiento].valueCodeableConcept = #MEDIA
-//* extension[Observacion].valueString = ""
+* extension[UrgenciaProcedimiento].valueCodeableConcept = #MEDIA "MEDIA"
+* extension[Observacion].valueString = "Alergica a la anestecia"
 
 //REPORTE DEL PROCEDIMIENTO //
 
@@ -84,13 +84,13 @@ Title: "Reporte del Procedimiento"
 Description: "An example Reporte del Procedimiento instance." 
 
 
-* id = "example-procedure"
+* id = "example-ReporteProcedimiento"
 * status = #completed
 * subject = Reference(ExamplePaciente) 
-* extension[FechaSolicitud].valueDateTime = "2024-07-03"
+* extension[FechaProcedimiento].valueDateTime = "2024-07-03"
 * extension[FechaProcedimiento].valueDateTime = "2024-05-15"
 * extension[TipoProcedimiento].valueString = "BIOPSIA"
-//* extension[Observación] =
+* extension[Observacion].valueString = "Ninguna"
 
 // HISTORIA CLINICA //
 
@@ -104,7 +104,7 @@ Description: "An example Historia Clínica instance."
 * subject = Reference(ExamplePaciente) 
 * extension[FechaDiagnostica].valueDateTime = "2024-08-02"
 * extension[TerminoClinico].valueString = "CANCER AL RIÑON"
-* extension[SeveridadDiagnostico].valueCodeableConcept = #MODERADO
+* extension[SeveridadDiagnostico].valueCodeableConcept = #MODERADO "MODERADO"
 * extension[Observacion].valueString = "RIÑON DERECHO"
 
 // PRESTADOR INDIVIDUAL  //
@@ -118,7 +118,7 @@ Description: "An example Prestador individual instance."
 * name.family = "Gonzaléz"
 * name.given = "Pedro"
 * birthDate = "1980-12-25" 
-* extension[Nacionalidad].valueCodeableConcept.coding.system = "urn:iso:std:iso:3166"
+//* extension[Nacionalidad].valueCodeableConcept.coding.system = "urn:iso:std:iso:3166"
 * extension[Nacionalidad].valueCodeableConcept.coding.code = #CL
 * extension[Nacionalidad].valueCodeableConcept.coding.display = "Chile"
 * identifier.system = "http://example.org/identifiers"
@@ -126,7 +126,7 @@ Description: "An example Prestador individual instance."
 * address.state.extension.url = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl"
 * address.state.extension.valueCodeableConcept = #RegionMetropolitana
 * qualification[Cert].code.coding.code = #01
-* extension[Mension].valueString = 
+* extension[Mension].valueString = "NEFROLOGO" 
 * qualification[SubEsp].code.coding.code = #4
 
 // ORGANIZACIÓN // 

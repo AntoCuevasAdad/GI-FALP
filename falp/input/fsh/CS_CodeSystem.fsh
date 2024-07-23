@@ -7,6 +7,7 @@ Id: CSurgProcedimiento
 Title: "Tramos de la urgencia del Procedimiento"
 Description: "Código asociados a la urgencia del Procedimiento"
 * ^caseSensitive = true
+* ^experimental = false 
 * #BAJA "BAJA"
 * #MEDIA "MEDIA" 
 * #ALTA "ALTA"
@@ -18,6 +19,7 @@ Id: CSseveridadDiagnostica
 Title: "Tramos de Severidad Diagnóstica"
 Description: "Tramos de Severidad Diagnóstica dependiendo de la valoración subjetiva de la gravedad de la enfermedad evaluada por el clínico"
 * ^caseSensitive = true 
+* ^experimental = false   
 * #LEVE "LEVE"
 * #MODERADO "MODERADO"
 * #GRAVE "GRAVE"

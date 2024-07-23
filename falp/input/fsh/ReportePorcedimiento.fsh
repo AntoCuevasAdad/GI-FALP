@@ -5,9 +5,9 @@ Title: "Reporte del Procedimiento"
 Description: "Perfil de Reporte del Procedimiento"
 
 * extension contains FechaSolicitud named FechaProcedimiento 1..1 
-* extension[FechaSolicitud].valueDateTime 1..1
-* extension[FechaSolicitud].valueDateTime MS
-* extension[FechaSolicitud].valueDateTime ^short = "Fecha en que se realizó el procedimiento"
+* extension[FechaProcedimiento].valueDateTime 1..1
+* extension[FechaProcedimiento].valueDateTime MS
+* extension[FechaProcedimiento].valueDateTime ^short = "Fecha en que se realizó el procedimiento"
 * extension contains TipoProcedimiento named TiposProcedimientos 1..1 
 * extension contains Observacion named Observación 0..1
 

@@ -26,7 +26,7 @@ publisher:
 #
 dependencies:
   hl7.fhir.cl.clcore: 1.8.10
-  hl7.fhir.cl.minsal.eis: dev
+  hl7.fhir.cl.minsal.eis: dev #0.1.1
 #   hl7.fhir.us.core: 3.1.0
 #   hl7.fhir.us.mcode:
 #     id: mcode

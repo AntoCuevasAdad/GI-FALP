@@ -9,6 +9,8 @@ Id: VSurgProcedimiento
 Title: "Urgencia del Procedimiento"
 Description: "Código asociados a a la urgencia del Procedimiento"
 * include codes from system CSurgProcedimiento
+* ^status = #active
+* ^experimental = false
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -17,6 +19,8 @@ Id: VSseveridadDiagnostica
 Title: "VSseveridadDiagnostica"
 Description: "Valoración subjetiva de la gravedad de la enfermedad evaluada por el clínico"
 * include codes from system CSseveridadDiagnostica
+* ^status = #active
+* ^experimental = false
 
 //QUESTIONARIO//
 ValueSet: VSDiab

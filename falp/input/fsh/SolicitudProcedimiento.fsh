@@ -4,6 +4,7 @@ Id: SolicitudProcedimiento
 Title: "Solicitud del Procedimiento"
 Description: "Perfil de Solicitud del Procedimiento"
 
+
 * extension contains FechaSolicitud named FechaSolicitud 1..1 
 * extension[FechaSolicitud].valueDateTime 1..1
 * extension[FechaSolicitud].valueDateTime MS
