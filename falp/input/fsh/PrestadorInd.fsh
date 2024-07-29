@@ -5,7 +5,7 @@ Title: "Prestador Indivual"
 Description: "Perfil del Prestador Individual"
 
 * name 1..1 MS
-* birthDate
+* birthDate 
   * ^short = "Fecha de nacimiento del prestador"
   * ^definition = "Fecha de nacimiento del prestador" 
 * extension contains https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises named Nacionalidad  0..* 
@@ -14,6 +14,7 @@ Description: "Perfil del Prestador Individual"
 * address
   * state 1..1 
 * qualification[Cert] 0..*
-* extension contains Mension named Mensión 0..1 
+//* extension contains Mension named Mensión 0..1 
+//* extension[Mensión] 0..1
 * qualification[Esp] 0..*
 * qualification[SubEsp] 0..1 

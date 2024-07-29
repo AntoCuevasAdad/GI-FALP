@@ -15,7 +15,7 @@ Description: "Sexo asignado al nacer "
 Context: Patient 
 * value[x] only CodeableConcept
   * ^short = "Sexo biólogico"
-* valueCodeableConcept from https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/SexoBiologico 
+* valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSSexoBiologico 
   * ^binding.description = "Tabla de Sexo biólogico"
 
 Extension: Nacionalidad
@@ -25,7 +25,7 @@ Description: "País de nacimiento y/o que haya sido nacionalizado"
 Context: Patient
 * value[x] only CodeableConcept
   * ^short = "Nacionalidad"
-* valueCodeableConcept from https://hl7chile.cl/fhir/ig/clcore/ValueSet/CodPais
+* valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSPaises	
   * ^binding.description = "Tabla de Nacionalidad"
 
 Extension: IdContacto
@@ -39,6 +39,7 @@ Id: MyTelecomExtension
 Title: "Contacto del acompañante"
 Description: "Contacto del acompañante del paciente"
 * value[x] only string
+* valueString
 
 //COVERAGE//
 
@@ -49,7 +50,7 @@ Description: "Set de códigos de previsiones de Salud"
 Context: Coverage 
 * value[x] only CodeableConcept
   * ^short = "Previones de Salud"
-* valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/CodeSystem/CSPrevision
+* valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSPrevision
   * ^binding.description = "Tabla de previsiones"
 
 Extension: TramosFonasaExtension
@@ -180,7 +181,7 @@ Extension: TipoSistemaSalud
 Id: TipoSistemaSalud
 Title: "Tipos de Sistemas de Salud"
 Description: "Tipos de Sistemas de Salud "
-Context: Organizacion
+Context: Organization 
 * value[x] only CodeableConcept
   * ^short = "Tipos de Sistemas de Salud "
 * valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSTipoSistemaSalud
