@@ -36,7 +36,7 @@ Description: "An example Patient instance."
 * address.city.extension.valueCodeableConcept.coding.system = "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL"
 * address.city.extension.valueCodeableConcept.coding.code = #13101 "Santiago Centro"
 //* address.city.extension.valueCodeableConcept.coding.display = "Santiago Centro"
-* address.district.extension.url = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCL"
+* address.district.extension.url = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCl"
 * address.district.extension.valueCodeableConcept.coding.system = "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL"
 * address.district.extension.valueCodeableConcept.coding.code = #131 "Santiago"
 //* address.district.extension.valueCodeableConcept.coding.display = "Santiago"
@@ -50,7 +50,7 @@ Description: "An example Patient instance."
 * contact.extension[0].valueIdentifier.value = "8987321-7"
 * contact.address.use = #home
 * contact.address.line[0] = "Gregorio Mira 123" 
-* contact.address.state.extension.url = "https://hl7chile.cl/fhir/ig/StructureDefinition/RegionCL"
+* contact.address.state.extension.url = "https://hl7chile.cl/fhir/ig/StructureDefinition/RegionCl"
 * contact.address.state.extension.valueCodeableConcept.coding.system = "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/RegionesCL"
 * contact.address.state.extension.valueCodeableConcept.coding.code = #13 "RegionMetropolitana"
 //* contact.address.state.extension.valueCodeableConcept.coding.display = "RegionMetropolitana"
@@ -91,18 +91,19 @@ Description: "An example Prestación de Salud instance."
 
 //SOLICITUD DEL PROCEDIMIENTO //
 Instance: SolicitudProcedimiento
-InstanceOf: Condition
+InstanceOf: Procedure
 Usage: #Example 
 Title: "Solicitud del Procedimiento"
 Description: "An example Solicitud del Procedimiento instance." 
 
 * id = "example-SolicitudProcedimiento"
+* status = #completed
 * subject = Reference(PacienteExample) 
 * extension[FechaSolicitud].valueDateTime = "2024-07-17"
 * extension[TipoProcedimiento].valueString = "BIOPSIA"
-* extension[UrgenciaProcedimiento].valueCodeableConcept.coding.system = "VSurgProcedimiento"
+* extension[UrgenciaProcedimiento].valueCodeableConcept.coding.system = "http://falp.cl/ValueSet/VSurgProcedimiento"
 * extension[UrgenciaProcedimiento].valueCodeableConcept.coding.code = #MEDIA "MEDIA"
-* extension[Observacion].valueString = "Alergica a la anestecia"
+* extension[Observacion].valueString = "Alergica a la anestesia"
 
 //REPORTE DEL PROCEDIMIENTO //
 
@@ -133,7 +134,7 @@ Description: "An example Historia Clínica instance."
 * subject = Reference(example-paciente) 
 * extension[FechaDiagnostica].valueDateTime = "2024-08-02"
 * extension[TerminoClinico].valueString = "CANCER AL RIÑON"
-* extension[UrgenciaProcedimiento].valueCodeableConcept.coding.system = ""
+* extension[SeveridadDiagnostico].valueCodeableConcept.coding.system = "http://falp.cl/ValueSet/VSseveridadDiagnostica"
 * extension[SeveridadDiagnostico].valueCodeableConcept.coding = #MODERADO "MODERADO"
 * extension[Observacion].valueString = "RIÑON DERECHO"
 
@@ -148,13 +149,14 @@ Description: "An example Prestador individual instance."
 * name.family = "Gonzaléz"
 * name.given = "Pedro"
 * birthDate = "1980-12-25" 
-//* extension[Nacionalidad].valueCodeableConcept.coding.system = "urn:iso:std:iso:3166"
-* extension[Nacionalidad].valueCodeableConcept.coding.code = #CL
-* extension[Nacionalidad].valueCodeableConcept.coding.display = "Chile"
+//* extension[Nacionalidad].valueCodeableConcept.coding.system = "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais"
+//* extension[Nacionalidad].valueCodeableConcept.coding.code = #CL "Chile" 
+//* extension[Nacionalidad].valueCodeableConcept.coding.display = "Chile"
 * identifier.system = "http://example.org/identifiers"
 * identifier.value = "14666333-2"
 * address.state.extension.url = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl"
-* address.state.extension.valueCodeableConcept = #13 "RegionMetropolitana"
+* address.state.extension.valueCodeableConcept.coding.system = "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/RegionesCL"
+* address.state.extension.valueCodeableConcept.coding.code = #13 "RegionMetropolitana"
 * qualification[Cert].code.coding.system = "https://api.minsal.cl/v1/catalogos/profesiones/"
 * qualification[Cert].code.coding.code = #01
 * extension[Mension].valueString = "NEFROLOGO" 
@@ -168,7 +170,8 @@ Title: "Example-Organización"
 Description: "An example Organización instance."  
 
 * id = "example-Organizacion"
-* extension[TipoSistemaSalud].valueCodeableConcept = #1
+* extension[TipoSistemaSalud].valueCodeableConcept.coding.system = "https://interoperabilidad.minsal.cl/fhir/ig/eis/CodeSystem/CSTipoSistemaSalud"
+* extension[TipoSistemaSalud].valueCodeableConcept.coding = #1 "Público"
 * identifier[0].system = "http://example.org/identifiers"
 * identifier[0].value = "7777777-7"
 * extension[TipoEstablecimientosPublicos].valueCodeableConcept.coding.system = "https://build.fhir.org/ig/Minsal-CL/eis/CodeSystem-CSTipoEstablecimientosPublicos"
@@ -186,7 +189,7 @@ Description: "An example Organización instance."
 * address.district.extension.valueCodeableConcept.coding.code = #131 "Santiago"
 //* address.district.extension.valueCodeableConcept.coding.display = "Santiago"
 * address.state.extension.url = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl"
-* address.state.extension.valueCodeableConcept.coding.system = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl"
+* address.state.extension.valueCodeableConcept.coding.system = "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/RegionesCL"
 * address.state.extension.valueCodeableConcept.coding.code = #13 "RegionMetropolitana"
 //* address.state.extension.valueCodeableConcept.coding.display = "RegionMetropolitana"
 

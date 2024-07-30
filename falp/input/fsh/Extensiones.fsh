@@ -84,7 +84,7 @@ Extension: FechaSolicitud
 Id: Fecha-Solicitud
 Title: "Fecha de Solicitud"
 Description: "Fecha en que se realizó la solicitud del procedimiento."
-Context: Condition
+//Context: Condition
 * value[x] only dateTime 
 * DateTime
 
@@ -139,6 +139,8 @@ Context: CoreDiagnosticoCl
 * valueDateTime 
 
 
+// HISTORIA CLINICA //
+
 Extension: TerminoClinico
 Id: TerminoClinico
 Title: "Termino Clinico"
@@ -165,6 +167,11 @@ Context: CoreDiagnosticoCl
 * value[x] only string 
 * valueString
 */ 
+
+
+// HISTORIA CLINICA //
+
+
 
 //PRESTADOR INDIVIDUAL///
 
