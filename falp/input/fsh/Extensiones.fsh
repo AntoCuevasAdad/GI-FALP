@@ -22,7 +22,7 @@ Extension: Nacionalidad
 Id: Nacionalidad
 Title: "Nacionalidad"
 Description: "País de nacimiento y/o que haya sido nacionalizado"
-Context: Patient
+//Context: Patient
 * value[x] only CodeableConcept
   * ^short = "Nacionalidad"
 * valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSPaises	

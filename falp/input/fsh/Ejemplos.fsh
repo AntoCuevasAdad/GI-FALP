@@ -50,7 +50,7 @@ Description: "An example Patient instance."
 * contact.extension[0].valueIdentifier.value = "8987321-7"
 * contact.address.use = #home
 * contact.address.line[0] = "Gregorio Mira 123" 
-* contact.address.state.extension.url = "https://hl7chile.cl/fhir/ig/StructureDefinition/RegionCl"
+* contact.address.state.extension.url = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl"
 * contact.address.state.extension.valueCodeableConcept.coding.system = "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/RegionesCL"
 * contact.address.state.extension.valueCodeableConcept.coding.code = #13 "RegionMetropolitana"
 //* contact.address.state.extension.valueCodeableConcept.coding.display = "RegionMetropolitana"
@@ -84,7 +84,7 @@ Description: "An example Prestación de Salud instance."
 * extension[PrevisionSalud].valueCodeableConcept.coding.system = "https://interoperabilidad.minsal.cl/fhir/ig/eis/CodeSystem/CSPrevision"
 * extension[PrevisionSalud].valueCodeableConcept.coding.code = #1 "FONASA"
 * extension[TramosFonasa].valueCodeableConcept.coding.system = "https://interoperabilidad.minsal.cl/fhir/ig/eis/CodeSystem/CSTramosFonasa"
-* extension[TramosFonasa].valueCodeableConcept = #C "TRAMO C"
+* extension[TramosFonasa].valueCodeableConcept.coding.code = #C "TRAMO C"
 * extension[SegCapa].valueBoolean = true
 * extension[NombreSeguro].valueString = "MEGA TRONIX 1000"
 * extension[Referencia].valueReference = Reference(PacienteExample)
@@ -101,8 +101,8 @@ Description: "An example Solicitud del Procedimiento instance."
 * subject = Reference(PacienteExample) 
 * extension[FechaSolicitud].valueDateTime = "2024-07-17"
 * extension[TipoProcedimiento].valueString = "BIOPSIA"
-* extension[UrgenciaProcedimiento].valueCodeableConcept.coding.system = "http://falp.cl/ValueSet/VSurgProcedimiento"
-* extension[UrgenciaProcedimiento].valueCodeableConcept.coding.code = #MEDIA "MEDIA"
+* extension[UrgenciaProcedimiento].valueCodeableConcept.coding.system = "http://falp.cl/CodeSystem/CSurgProcedimiento"
+* extension[UrgenciaProcedimiento].valueCodeableConcept.coding = #MEDIA "MEDIA"
 * extension[Observacion].valueString = "Alergica a la anestesia"
 
 //REPORTE DEL PROCEDIMIENTO //
@@ -116,7 +116,7 @@ Description: "An example Reporte del Procedimiento instance."
 
 * id = "example-ReporteProcedimiento"
 * status = #completed
-* subject = Reference(example-paciente) 
+* subject = Reference(PacienteExample) 
 * extension[FechaProcedimiento].valueDateTime = "2024-07-03"
 * extension[FechaProcedimiento].valueDateTime = "2024-05-15"
 * extension[TipoProcedimiento].valueString = "BIOPSIA"
@@ -134,7 +134,7 @@ Description: "An example Historia Clínica instance."
 * subject = Reference(example-paciente) 
 * extension[FechaDiagnostica].valueDateTime = "2024-08-02"
 * extension[TerminoClinico].valueString = "CANCER AL RIÑON"
-* extension[SeveridadDiagnostico].valueCodeableConcept.coding.system = "http://falp.cl/ValueSet/VSseveridadDiagnostica"
+* extension[SeveridadDiagnostico].valueCodeableConcept.coding.system = "http://falp.cl/CodeSystem/CSseveridadDiagnostica"
 * extension[SeveridadDiagnostico].valueCodeableConcept.coding = #MODERADO "MODERADO"
 * extension[Observacion].valueString = "RIÑON DERECHO"
 
@@ -152,7 +152,12 @@ Description: "An example Prestador individual instance."
 //* extension[Nacionalidad].valueCodeableConcept.coding.system = "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais"
 //* extension[Nacionalidad].valueCodeableConcept.coding.code = #CL "Chile" 
 //* extension[Nacionalidad].valueCodeableConcept.coding.display = "Chile"
-* identifier.system = "http://example.org/identifiers"
+* identifier.use = #official
+* identifier.type = #PNN "Person number"
+* identifier.type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+//* identifier.type.coding.code = #152
+//* identifier.type.coding.display = "Passport Number"
+* identifier.system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * identifier.value = "14666333-2"
 * address.state.extension.url = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl"
 * address.state.extension.valueCodeableConcept.coding.system = "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/RegionesCL"

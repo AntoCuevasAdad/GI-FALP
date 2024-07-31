@@ -2,7 +2,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-CodeSystem:  CSurgProcedimiento
+CodeSystem: CSurgProcedimiento
 Id: CSurgProcedimiento
 Title: "Tramos de la urgencia del Procedimiento"
 Description: "Código asociados a la urgencia del Procedimiento"
