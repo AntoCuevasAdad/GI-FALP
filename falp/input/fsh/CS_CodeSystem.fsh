@@ -16,7 +16,7 @@ Description: "Código asociados a la urgencia del Procedimiento"
 
 CodeSystem: CSseveridadDiagnostica
 Id: CSseveridadDiagnostica
-Title: "Tramos de Severidad Diagnóstica"
+Title: "Tramos de Severidad Diagnóstica" 
 Description: "Tramos de Severidad Diagnóstica dependiendo de la valoración subjetiva de la gravedad de la enfermedad evaluada por el clínico"
 * ^caseSensitive = true 
 * ^experimental = false   

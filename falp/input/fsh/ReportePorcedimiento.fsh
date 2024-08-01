@@ -4,6 +4,7 @@ Parent: Condition
 Title: "Reporte del Procedimiento"
 Description: "Perfil de Reporte del Procedimiento"
 
+//* url = "http:​/​/falp​.cl​/StructureDefinition​/ReporteProcedimiento"
 * extension contains FechaSolicitud named FechaProcedimiento 1..1 
 * extension[FechaProcedimiento].valueDateTime 1..1
 * extension[FechaProcedimiento].valueDateTime MS
