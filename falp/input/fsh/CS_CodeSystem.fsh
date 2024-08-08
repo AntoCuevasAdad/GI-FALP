@@ -24,11 +24,13 @@ Description: "Tramos de Severidad Diagnóstica dependiendo de la valoración sub
 * #MODERADO "MODERADO"
 * #GRAVE "GRAVE"
 
+// ORGANIZACION //
+
 //QUESTIONARIO//
 CodeSystem: CSDiab
 Id: CSDiab
-Title: "Tipos de diabetes y opción de so no posee"
-Description: "Nombres de los tipos de diabetes y opción de so no posee"
+Title: "Tipo de diabetes y opción de si no posee"
+Description: "Nombres del tipo de diabetes y opción de si no posee"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

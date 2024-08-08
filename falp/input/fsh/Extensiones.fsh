@@ -41,6 +41,7 @@ Description: "Contacto del acompañante del paciente"
 * value[x] only string
 * valueString
 
+
 //COVERAGE//
 
 Extension: PrevisionExtension
@@ -179,9 +180,9 @@ Extension: Mension
 Id: Mension 
 Title: "Nombre de la mensión de su titulo profesional"
 Description: "Nombre de la mensión de su titulo profesional si corresponde"
-Context: CorePrestadorCl 
+Context: Practitioner
 * value[x] only string 
-* valueString 1..1
+* valueString 
 
 //ORGANIZACIÓN//
 Extension: TipoSistemaSalud
@@ -211,7 +212,7 @@ Description: "Nivel de atención que se asigna según la cobertura y complejidad
 Context: Organizacion
 * value[x] only CodeableConcept
   * ^short = "Nivel de Atencion"
-* valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSNivelAtencion 
+* valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSNivelAtencion
   * ^binding.description = "Nivel de atención que se asigna según la cobertura y complejidad"
 
 Extension: TipoPertinenciaEstab	

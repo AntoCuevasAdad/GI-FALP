@@ -1,6 +1,6 @@
-Profile: HistorialClinico 
+Profile: HistorialClinico
 Parent: CoreDiagnosticoCl
-Id: HistorialClinico            
+Id: HistorialClinico     
 Title: "Historial Clínico"
 Description: "Historia clinica respecto a diagnóstico previos si posee el Paciente" 
 

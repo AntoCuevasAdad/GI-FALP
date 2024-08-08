@@ -7,7 +7,7 @@
 ValueSet: VSurgProcedimiento
 Id: VSurgProcedimiento
 Title: "Urgencia del Procedimiento"
-Description: "Código asociados a a la urgencia del Procedimiento"
+Description: "Códigos asociados a la Urgencia del Procedimiento"
 * include codes from system CSurgProcedimiento
 * ^status = #active
 * ^experimental = false
@@ -16,7 +16,7 @@ Description: "Código asociados a a la urgencia del Procedimiento"
 
 ValueSet: VSseveridadDiagnostica
 Id: VSseveridadDiagnostica
-Title: "VSseveridadDiagnostica"
+Title: "Severidad Diagnostica"
 Description: "Valoración subjetiva de la gravedad de la enfermedad evaluada por el clínico"
 * include codes from system CSseveridadDiagnostica
 * ^status = #active
@@ -25,8 +25,8 @@ Description: "Valoración subjetiva de la gravedad de la enfermedad evaluada por
 //QUESTIONARIO//
 ValueSet: VSDiab
 Id: VSDiab
-Title: "cccc"
-Description: "ccc"
+Title: "Tipos de diabetes y opción de si no posee"
+Description: "Códigos asociados Tipo de diabetes y opción de si no posee"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
