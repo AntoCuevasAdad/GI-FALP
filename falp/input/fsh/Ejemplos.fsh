@@ -1,11 +1,11 @@
 Instance: EjPaciente
 InstanceOf: Paciente 
 Usage: #Example
-Title: "Example Patient"
-Description: "An example Patient instance."
+Title: "Ejemplo Paciente"
+Description: "Ejemplo del Perfil Paciente"
 
 //* id = "example-paciente"
-//* meta.profile = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePacienteCl"
+* meta.profile = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePacienteCl"
 //* extension.url = "https://interoperabilidad.minsal.cl/fhir/ig/eis/CodeSystem/CSSexoBiologico"
 
 * extension[Sexobiologico].valueCodeableConcept.coding.system = "https://interoperabilidad.minsal.cl/fhir/ig/eis/CodeSystem/CSSexoBiologico"
@@ -19,7 +19,7 @@ Description: "An example Patient instance."
 //* extension[Nacionalidad].valueCodeableConcept.coding.display = "Chile"
 
 * name[NombreOficial].family = "Perez"
-* name[NombreOficial].given[0] = "Juan"
+* name[NombreOficial].given[0] = "Juana"
 * name[NombreOficial].use = #official
 
 * birthDate = "1980-01-01"
@@ -47,16 +47,27 @@ Description: "An example Patient instance."
 * address.state.extension.valueCodeableConcept.coding.system = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl"
 * address.state.extension.valueCodeableConcept.coding.code = #13 "RegionMetropolitana"
 
-* contact.extension.url = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/IdContacto"
+//* contact.extension[IdContacto].url = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/IdContacto"
+//* contact.extension[IdContacto].value = "8987321-7"
+
+* contact.extension.url = "BackboneElement"
+* contact.extension.extension[0].url = "tutId"
+* contact.extension.extension[=].valueIdentifier.type = #NNCHL "Chile"  //código DNI
+* contact.extension.extension[=].valueIdentifier.system = "http://regcivil.cl/Validacion/RUN"
+* contact.extension.extension[=].valueIdentifier.value = "8987321-7"
+* contact.extension.extension[+].url = "docProc"
+* contact.extension.extension[=].valueCodeableConcept = #152 "Chile" //CODIGO  PAIS 
 
 
 * contact.relationship.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0131"
 * contact.relationship.coding.code = #N "Next of Kin"
 
+/*
 * contact.extension.extension.url = "http://hl7.org/fhir/ValueSet/identifier-use"
-* contact.extension.extension[0].valueIdentifier.use = #official "Official"
-* contact.extension.extension[0].valueIdentifier.system = "http://hl7.org/fhir/identifier-use"
-* contact.extension.extension[0].valueIdentifier.value = "8987321-7"
+* contact.extension[IdContacto].extension[0].valueIdentifier.use = #official "Official"
+* contact.extension[IdContacto].extension[0].valueIdentifier.system = "http://hl7.org/fhir/identifier-use"
+* contact.extension[IdContacto].extension[0].valueIdentifier.value = "8987321-7"
+*/
 
 * contact.address.use = #home
 * contact.address.line[0] = "Gregorio Mira 123" 
@@ -82,23 +93,23 @@ Description: "An example Patient instance."
 //* contact.relationship.url = "http://hl7.org/fhir/ValueSet/patient-contactrelationship"
 //* contact.relationship.coding.display = "Next of Kin"
 
-//* contact.telecom[0].url = "http://hl7.org/fhir/ValueSet/contact-point-use"
-* contact.telecom[0].extension.url = "http://hl7.org/fhir/ValueSet/contact-point-system"
+//* contact.telecom = "ContactPoint"
+* contact.telecom[0].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-TEL-address"
 * contact.telecom[0].system = #phone
 * contact.telecom[0].value = "+56912345678"
 * contact.telecom[0].use = #mobile
-* contact.telecom[0].system = #email
-* contact.telecom[0].value = "maria.gonzalez@example.com"
-* contact.telecom[0].use = #home
+* contact.telecom[+].system = #email
+* contact.telecom[=].value = "maria.gonzalez@example.com"
+* contact.telecom[=].use = #home
 
-//* contact.telecom[0].extension[MyTelecomExtension].url = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/MyTelecomExtension"
-* contact.telecom[0].extension[MyTelecomExtension].valueString = "ejemplo@correoaompañante.cl"
+//* contact.telecom[0].extension.url = "http://hl7.org/fhir/StructureDefinition/Extension"
+* contact.telecom[0].extension.valueString = "maria.gonzalez@example.cl"
 
 Instance: EjPrestacionSalud
 InstanceOf: PrestacionSalud
 Usage: #Example
-Title: "Example Presentación de Salud"
-Description: "An example Prestación de Salud instance." 
+Title: "Ejemplo Presentación de Salud"
+Description: "Ejemplo de Perfil Prestación de Salud" 
 
 * id = "example-coverage"
 * status = #active
@@ -121,8 +132,8 @@ Description: "An example Prestación de Salud instance."
 Instance: EjSolicitudProcedimiento
 InstanceOf: SolicitudProcedimiento
 Usage: #Example 
-Title: "Solicitud del Procedimiento"
-Description: "An example Solicitud del Procedimiento instance." 
+Title: "Ejemplo de Solicitud del Procedimiento"
+Description: "Ejemplo del Perfil Solicitud del Procedimiento " 
 
 * id = "example-SolicitudProcedimiento"
 * status = #completed
@@ -144,9 +155,8 @@ Description: "An example Solicitud del Procedimiento instance."
 Instance: EjReporteProcedimiento
 InstanceOf: ReporteProcedimiento
 Usage: #Example 
-Title: "Reporte del Procedimiento"
-Description: "An example Reporte del Procedimiento instance." 
-
+Title: "Ejemplo de Reporte del Procedimiento"
+Description: "Ejemplo del Perfil Reporte del Procedimiento" 
 
 * id = "example-ReporteProcedimiento"
 * subject = Reference(EjPaciente) 
@@ -165,15 +175,15 @@ Description: "An example Reporte del Procedimiento instance."
 Instance: EjHistorialClinico
 InstanceOf: HistorialClinico
 Usage: #Example 
-Title: "Example-HistoriaClínica"
-Description: "An example Historia Clínica instance."  
+Title: "Ejemplo Historia Clínica"
+Description: "Ejemplo del Perfil Historia Clínica"  
 
 //* id = "example-HistoriaClinica"
 * subject = Reference(EjPaciente) 
 
 * extension[FechaDiagnostica].valueDateTime = "2024-08-02"
 
-* extension[TerminoClinico].valueString = "CANCER AL RIÑON"
+* extension[TerminoClinico].valueString = #064 "TUMOR MALIGNO DEL RIÑON, EXCEPTO DE LA PELVIS RENAL" // Para un futuro agregar wel terminio clinico en formato estandarizado en una tabla en CIE-10 
 
 * extension[SeveridadDiagnostico].valueCodeableConcept.coding.system = "http://falp.cl/CodeSystem/CSseveridadDiagnostica"
 * extension[SeveridadDiagnostico].valueCodeableConcept.coding = #MODERADO "MODERADO"
@@ -186,8 +196,8 @@ Description: "An example Historia Clínica instance."
 Instance: EjPrestadorIndividual
 InstanceOf: PrestadorIndividual
 Usage: #Example 
-Title: "Example Prestador Individual"
-Description: "An example Prestador individual instance." 
+Title: "Ejemplo Prestador Individual"
+Description: "Ejemplo del Perfil Prestador Individual" 
 
 * id = "example-PrestadorIndividual"
 * name.family = "Gonzaléz"
@@ -220,8 +230,8 @@ Description: "An example Prestador individual instance."
 Instance: EjOrganizacion
 InstanceOf: Organizacion
 Usage: #Example 
-Title: "Example-Organización"
-Description: "An example Organización instance."  
+Title: "Ejemplo Organización"
+Description: "Ejemplo del Perfil Organización"  
 
 * id = "example-Organizacion"
 * extension[TipoSistemaSalud].valueCodeableConcept.coding.system = "https://interoperabilidad.minsal.cl/fhir/ig/eis/CodeSystem/CSTipoSistemaSalud"
@@ -259,8 +269,8 @@ Description: "An example Organización instance."
 Instance: EjLocalizacion
 InstanceOf: Localizacion
 Usage: #Example 
-Title: "Example-Localizacion"
-Description: "An example Localizacion instance."  
+Title: "Ejemplo Localizacion"
+Description: "Ejemplo del Perfil Localizacion"  
 
 * id = "example-Localizacion"
 * status = #active

@@ -27,20 +27,28 @@ Description: "País de nacimiento y/o que haya sido nacionalizado"
   * ^short = "Nacionalidad"
 * valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSPaises	
   * ^binding.description = "Tabla de Nacionalidad"
-
+/*
 Extension: IdContacto
 Id: IdContacto
 Title: "Identificador de Contacto"
 Description: "Identificador único para el contacto del paciente"
-* value[x] only string
+* value[x] only string 
+/*
+Extension: docProc
+Id: docProc
+Title: "Identificador de Contacto"
+Description: "Identificador único para el contacto del paciente"
+* value[x] only CodeableConcept 
+* valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSPaises	
+  * ^binding.description = "Origen país de origen de documento"
 
 Extension: MyTelecomExtension
 Id: MyTelecomExtension
 Title: "Contacto del acompañante"
 Description: "Contacto del acompañante del paciente"
 * value[x] only string
-* valueString
-
+* valueString 
+*/
 
 //COVERAGE//
 

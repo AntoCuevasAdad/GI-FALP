@@ -1,6 +1,3 @@
-// This is a simple example of a FSH file.
-// This file can be renamed, and additional FSH files can be added.
-// SUSHI will look for definitions in any file using the .fsh ending.
 Profile: Paciente 
 Parent: CorePacienteCl
 Id: Paciente
@@ -20,17 +17,22 @@ Description: "Perfil de Paciente"
   * city 1..1
   * district 1..1
   * state 1..1 
+
 * contact
-* contact.extension[IdContacto] 1..* 
+* contact.extension.url = "BackboneElement"
+* contact.extension 1..* 
+* contact.extension[IdContacto] //^short = "Identificación del Contacto"
+* contact.extension[IdContacto] //^definition = "Extensión para declarar identificación del contacto y la procedencia de esta"
+
 * contact.name.family 1..1
 * contact.name.given 1..1
-//* contact.extension contains TutId 1..1
-//* contact.extension[TutId].value[x] only Identifier
+
 * contact.relationship 1..1
+
 * contact.telecom 1..* 
 * contact.telecom.value ^short = "Detalles de Contacto"
 * contact.telecom.value ^definition = "Detalles del Contacto, comunmente el o los mas usados (Ej: Teléfono fijo, móvil, email, etc.)"
-* contact.telecom.[MyTelecomExtension].valueString 
+//* contact.telecom.[MyTelecomExtension].valueString 
 * contact.address only cl-address
 * contact.address
   * state 1..1  
