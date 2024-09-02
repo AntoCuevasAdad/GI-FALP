@@ -93,7 +93,6 @@ Extension: FechaSolicitud
 Id: Fecha-Solicitud
 Title: "Fecha de Solicitud"
 Description: "Fecha en que se realizó la solicitud del procedimiento."
-//Context: Condition
 * value[x] only dateTime 
 * DateTime
 
@@ -196,10 +195,10 @@ Context: Practitioner
 Extension: TipoSistemaSalud
 Id: TipoSistemaSalud
 Title: "Tipos de Sistemas de Salud"
-Description: "Tipos de Sistemas de Salud "
+Description: "Tipos de Sistemas de Salud"
 Context: Organization 
 * value[x] only CodeableConcept
-  * ^short = "Tipos de Sistemas de Salud "
+  * ^short = "Tipos de Sistemas de Salud"
 * valueCodeableConcept from https://interoperabilidad.minsal.cl/fhir/ig/eis/ValueSet/VSTipoSistemaSalud
   * ^binding.description = "Tipos de Sistemas de Salud"
 
